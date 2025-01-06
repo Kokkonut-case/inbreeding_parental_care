@@ -24,6 +24,6 @@ format:
       toc-title: "Sections"
       code-fold: true # fold code up for neater display
       smooth-scroll: true
-      #lightbox: true # if you click on figures, they expand
+      lightbox: true # if you click on figures, they expand
       embed-resources: true # output doc contains all info needed to display html
       #fig-format: pdf
