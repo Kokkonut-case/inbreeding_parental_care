@@ -154,7 +154,7 @@ where inbreeding is a form of altruism. For alleles expressed in males, the altr
 
 $$\underbrace{1 - \delta}_\textrm{male benefit} > \underbrace{r\delta}_\textrm{female cost}$$
 
-Thus, relatedness expands the space where selection favours inbreeding for females, but reduces it for males. 
+Thus, relatedness expands the space where selection favours inbreeding for females, but reduces it for males. Increasing $r$ therefore reduces conflict between the sexes over inbreeding. 
 
 ::: callout-tip
 ## Note
