@@ -271,7 +271,7 @@ expand_grid(a = seq(from = 0, to = 1, by = 0.001),
         axis.title = element_text(size = 20))
 ```
 
-**Figure 4**. the effectiveness of parental care ($\alpha$) required for male investment in parental care ($\Delta N_\mathrm{m}$) to increase the level of inbreeding depression that can be tolerated. In the area above the curve, male care increases the inbreeding depression threshold, while in the area below it decreases the inbreeding tolerance threshold. $\Delta N_\mathrm{f} = 1$ in this scenario.  
+**Figure 4**. the effectiveness of parental care ($\alpha$) required for male investment in parental care ($\Delta N_\mathrm{m}$) to increase the level of inbreeding depression that can be tolerated, relative to the control condition (no male care, no effect of care on inbreeding depression). In the area above the curve, male care increases the inbreeding depression threshold, while in the area below it decreases the inbreeding tolerance threshold. $\Delta N_\mathrm{f} = 1$ in this scenario.  
 
 ## What does the model predict?
 
