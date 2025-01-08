@@ -234,7 +234,7 @@ delta_Nm_pc_plot
 ::: callout-tip
 ## Note
 
-The rightmost panels show an unusual result. When care is completely effective at buffering inbreeding depression ($\alpha = 1$) and male parental care does not completely replace a future outcrossing opportunity ($\Delta N_\mathrm{m} < 1$), then all levels of care investment predict the same inbreeding depression threshold for a given relatedness coefficient. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
+The rightmost panels show an unusual result. When care is completely effective at buffering inbreeding depression ($\alpha = 1$), then all levels of male care investment where $\Delta N_\mathrm{m} < 1$ predict the same inbreeding depression threshold for a given relatedness coefficient. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
 :::
 
 ## What does the model predict?
