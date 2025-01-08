@@ -238,18 +238,48 @@ delta_Nm_pc_plot
 ::: callout-tip
 ## Note
 
-The rightmost panels show an unusual result. When care is completely effective at buffering inbreeding depression ($\alpha = 1$), then all levels of male care investment where $\Delta N_\mathrm{m} < 1$ predict the same inbreeding depression threshold for a given relatedness coefficient. Intriguely the thresholds in this case are $\delta_\mathrm{f} < \frac{2r}{1 + r}$ and $\delta_\mathrm{f} < \frac{2}{1 + r}$; exactly twice the amount of inbreeding that can be tolerated when care has no effect. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
+The rightmost panels show an unusual result. When $\alpha = 1$, then all levels of male care investment where $\Delta N_\mathrm{m} < 1$ predict the same inbreeding depression threshold for a given relatedness coefficient. Intriguely the thresholds in this case are $\delta_\mathrm{f} < \frac{2r}{1 + r}$ and $\delta_\mathrm{f} < \frac{2}{1 + r}$; exactly twice the amount of inbreeding that can be tolerated when care has no effect and males suffer no costs from mating. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
 :::
+
+Finally I can derive a threshold value of $\alpha$ above which male investment in care always increases the level of inbreeding depression that can be tolerated, relative to the control condition (no male care, no effect of care on inbreeding depression). 
+
+For inbreeding alleles expressed in females we need to find values of $\alpha$ where
+
+$$
+\frac{(r - r\Delta N_\mathrm{m})}{1 + r - \alpha c - r\alpha c} >
+\frac{r}{1 + r}
+$$
+which, given that $c = (\Delta N_\mathrm{m} + \Delta N_\mathrm{m})/2$ reduces to 
+
+$$\alpha > \frac{2\Delta N_\mathrm{m}}{1 + \Delta N_\mathrm{m}}$$
+and turns out to be identical in the male case.
+
+```{r}
+expand_grid(a = seq(from = 0, to = 1, by = 0.001),
+            N_m = seq(from = 0, to = 1, by = 0.001)) %>% 
+  mutate(alpha_threshold = (2*N_m)/(1 + N_m)) %>% 
+  
+  ggplot(aes(x = N_m, y = alpha_threshold)) +
+  geom_line(linewidth = 1.4) + 
+  coord_cartesian(ylim = c(0, 1)) +
+  labs(x = ~Delta~'N'[m],
+       y = ~alpha~'') +
+  scale_x_continuous(expand = c(0, 0.00)) + 
+  scale_y_continuous(expand = c(0, 0.00)) +
+  theme_bw() +
+  theme(text = element_text(size = 16),
+        axis.title = element_text(size = 20))
+```
+
+**Figure 4**. the effectiveness of parental care ($\alpha$) required for male investment in parental care ($\Delta N_\mathrm{m}$) to increase the level of inbreeding depression that can be tolerated. In the area above the curve, male care increases the inbreeding depression threshold, while in the area below it decreases the inbreeding tolerance threshold. $\Delta N_\mathrm{f} = 1$ in this scenario.  
 
 ## What does the model predict?
 
 1. Previous models for preferential sibling mating underestimate the magnitude of inbreeding depression that can be tolerated when female-limited care provides some compensation.  
 
-2. Male care tends to restrict the invasion of alleles that code for inbreeding, relative to no male care conditions. See the fraction of lines that fall below the dashed, black control line in Figure 3. 
+2. Male care tends to restrict the invasion of alleles that code for inbreeding (in response to selection on either sex), relative to female-limited care. See the fraction of lines that fall below the dashed, black control line in Figure 3. This is further illustrated in Figure 4.
 
-3. Male care reduces the invasion prospects of inbreeding alleles, irrespective of the sex they are expressed in.
-
-4. However, when care has a large mitigating effect on inbreeding depression (large $\alpha$), the conditions for inbreeding alleles to invade become more permissive, even when males invest quite a lot in care. For example, when care reduces inbreeding depression by 75%, and males lose half a future outbred mating, the invasion prospects of an inbreeding strategy are equivalent to the no male care condition (where substantial inbreeding depression can be tolerated).   
+3. However, when care has a large mitigating effect on inbreeding depression (large $\alpha$), the conditions for inbreeding alleles to invade become more permissive, even when males invest quite a lot in care. See Figure 4. 
 
 ## How we can test this?
 
