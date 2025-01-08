@@ -149,7 +149,7 @@ delta_m_plot <-
 delta_f_plot + delta_m_plot + plot_layout(guides = "collect", axis_titles = "collect")
 ```
 
-**Figure 2**. Inbreeding tolerance thresholds when parental care is female-limited. Different coloured lines show thresholds for different levels of care effectiveness. The left panel shows the conditions required for selection to favour inbreeding in females, while the right shows these conditions for inbreeding in males.
+**Figure 2**. Inbreeding tolerance thresholds when parental care is female-limited. Different coloured lines show thresholds for different levels of care effectiveness. The left panel shows the conditions required for selection to favour inbreeding in females, while the right shows these conditions for inbreeding in males. When $\alpha = 1$, selection will favour males that inbreed in all cases where inbreeding depression \< 1. Hence, the corresponding dark purple line never appears in the right panel.
 
 The plot shows that as care more effectively buffers inbreeding depression, the conditions for selection to favour inbreeding become more permissive. As shown previously, relatedness between mating partners has opposite effects depending on the sex expressing the inbreeding allele. To show why, @eq-f_allele_counting_pc and @eq-m_allele_counting_pc can be rearranged in the form of Hamilton's rule $rb > c$. Let $\alpha = 0$ (no effect of care - shown by the yellow line in the Figure), and as before, $\Delta N_\mathrm{f} = 1$ and $\Delta N_\mathrm{m} = 0$. For alleles expressed in females we find that selection favours inbreeding when
 
@@ -159,12 +159,6 @@ where inbreeding is a form of altruism. For alleles expressed in males, the altr
 $$\underbrace{1 - \delta}_\textrm{male benefit} > \underbrace{r\delta}_\textrm{female cost}$$
 
 Thus, relatedness expands the space where selection favours inbreeding for females, but reduces it for males. Increasing $r$ therefore reduces conflict between the sexes over inbreeding. 
-
-::: callout-tip
-## Note
-
-When $\alpha = 1$, selection will favour males that inbreed in all cases where inbreeding depression \< 1. Hence, the corresponding dark purple line never appears in Figure 2.
-:::
 
 Now, what happens when males care? Insepction of @eq-f_D_tol_pc and @eq-m_D_tol_pc reveals two, opposing effects. Increasing $\Delta N_\mathrm{m}$ decreases the size of the *numerator*, or put biologically, reduces a male's future reproductive success. However it also leads to an increase in $c$, mitigating the effect of inbreeding depression on offspring production/survival, thus decreasing the size of the *denominator*. Whether inbreeding is favoured when males invest more in care depends largely on the $\alpha$ parameter.
 
