@@ -160,7 +160,7 @@ $$\underbrace{1 - \delta}_\textrm{male benefit} > \underbrace{r\delta}_\textrm{f
 
 Thus, relatedness expands the space where selection favours inbreeding for females, but reduces it for males. Increasing $r$ therefore reduces conflict between the sexes over inbreeding. 
 
-Now, what happens when males care? Insepction of @eq-f_D_tol_pc and @eq-m_D_tol_pc reveals two, opposing effects. Increasing $\Delta N_\mathrm{m}$ decreases the size of the *numerator*, or put biologically, reduces a male's future reproductive success. However it also leads to an increase in $c$, mitigating the effect of inbreeding depression on offspring production/survival, thus decreasing the size of the *denominator*. Whether inbreeding is favoured when males invest more in care depends largely on the $\alpha$ parameter.
+Now, what happens when males care? Inspection of @eq-f_D_tol_pc and @eq-m_D_tol_pc reveals two, opposing effects. Increasing $\Delta N_\mathrm{m}$ decreases the size of the *numerator*, or put biologically, reduces a male's future reproductive success. However it also leads to an increase in $c$, mitigating the effect of inbreeding depression on offspring production/survival, thus decreasing the size of the *denominator*. Whether inbreeding is favoured when males invest more in care depends largely on the $\alpha$ parameter.
 
 ```{r}
 #| fig-width: 14
@@ -232,7 +232,7 @@ delta_Nm_pc_plot
 ::: callout-tip
 ## Note
 
-The rightmost panels show an unusual result. When $\alpha = 1$, then all levels of male care investment where $\Delta N_\mathrm{m} < 1$ predict the same inbreeding depression threshold for a given relatedness coefficient. Intriguely the thresholds in this case are $\delta_\mathrm{f} < \frac{2r}{1 + r}$ and $\delta_\mathrm{f} < \frac{2}{1 + r}$; exactly twice the amount of inbreeding that can be tolerated when care has no effect and males suffer no costs from mating. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
+The rightmost panels show an unusual result. When $\alpha = 1$, then all levels of male care investment where $\Delta N_\mathrm{m} < 1$ predict the same inbreeding depression threshold for a given relatedness coefficient. Intriguingly the thresholds in this case are $\delta_\mathrm{f} < \frac{2r}{1 + r}$ and $\delta_\mathrm{f} < \frac{2}{1 + r}$; exactly twice the amount of inbreeding that can be tolerated when care has no effect and males suffer no costs from mating. However, when males simply swap an outcrossing event for an inbred mating ($\Delta N_\mathrm{m} = 1$), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap. 
 :::
 
 Finally I can derive a threshold value of $\alpha$ above which male investment in care always increases the level of inbreeding depression that can be tolerated, relative to the control condition (no male care, no effect of care on inbreeding depression). 
