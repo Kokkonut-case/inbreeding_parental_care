@@ -5013,7 +5013,7 @@ window.Quarto = {
 </section>
 <section id="adding-an-effect-of-care-on-delta" class="level2">
 <h2 class="anchored" data-anchor-id="adding-an-effect-of-care-on-delta">Adding an effect of care on <span class="math inline">\(\delta\)</span></h2>
-<p>If the costs to future reproduction <span class="math inline">\(\Delta N_\mathrm{f}\)</span> and <span class="math inline">\(\Delta N_\mathrm{m}\)</span> are primarily caused by investment in parental care, we can link this to the degree of inbreeding depression felt by offspring. Let <span class="math inline">\(c = (\Delta N_\mathrm{f} + \Delta N_\mathrm{m})/2\)</span>, the amount of care received by offspring, averaged across parents. We assume that <span class="math inline">\(c\)</span> affects reproductive output following an inbreeding event by moderating inbreeding depression, such that direct fitness is <span class="math inline">\(1-\delta(1-\alpha c)\)</span>, where <span class="math inline">\(\alpha\)</span> controls the effectiveness of care.</p>
+<p>If the costs to future reproduction <span class="math inline">\(\Delta N_\mathrm{f}\)</span> and <span class="math inline">\(\Delta N_\mathrm{m}\)</span> are primarily caused by investment in parental care, we can link this to the degree of inbreeding depression felt by offspring. For now, I assume that while care can affect the evolution of inbreeding preference, inbreeding does not influence the evolution of care. Let <span class="math inline">\(c = (\Delta N_\mathrm{f} + \Delta N_\mathrm{m})/2\)</span>, the amount of care received by offspring, averaged across parents. We assume that <span class="math inline">\(c\)</span> affects reproductive output following an inbreeding event by moderating inbreeding depression, such that direct fitness is <span class="math inline">\(1-\delta(1-\alpha c)\)</span>, where <span class="math inline">\(\alpha\)</span> controls the effectiveness of care.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -5228,7 +5228,7 @@ Note
 </div>
 </div>
 </div>
-<p><strong>Figure 3</strong>. Inbreeding depression thresholds (before buffering) for varying values of relatedness, male investment in care and the ability of care to buffer inbreeding depression. The dashed line shows the inbreeding threshold when care does not affect inbreeding depression and reproductive investment is female-limited (hereafter referred to as the control condition).</p>
+<p><strong>Figure 3</strong>. Inbreeding depression thresholds (before buffering) for varying values of relatedness, male investment in care and the ability of care to buffer inbreeding depression. The dashed line shows the inbreeding threshold when care does not affect inbreeding depression and reproductive investment is female-limited (hereafter referred to as the control condition). <span class="math inline">\(\Delta N_\mathrm{f} = 1\)</span> in all panels.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -5239,7 +5239,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The rightmost panels show an unusual result. When care is completely effective at buffering inbreeding depression (<span class="math inline">\(\alpha = 1\)</span>), then all levels of male care investment where <span class="math inline">\(\Delta N_\mathrm{m} &lt; 1\)</span> predict the same inbreeding depression threshold for a given relatedness coefficient. However, when males simply swap an outcrossing event for an inbred mating (<span class="math inline">\(\Delta N_\mathrm{m} = 1\)</span>), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap.</p>
+<p>The rightmost panels show an unusual result. When care is completely effective at buffering inbreeding depression (<span class="math inline">\(\alpha = 1\)</span>), then all levels of male care investment where <span class="math inline">\(\Delta N_\mathrm{m} &lt; 1\)</span> predict the same inbreeding depression threshold for a given relatedness coefficient. Intriguely the thresholds in this case are <span class="math inline">\(\delta_\mathrm{f} &lt; \frac{2r}{1 + r}\)</span> and <span class="math inline">\(\delta_\mathrm{f} &lt; \frac{2}{1 + r}\)</span>; exactly twice the amount of inbreeding that can be tolerated when care has no effect. However, when males simply swap an outcrossing event for an inbred mating (<span class="math inline">\(\Delta N_\mathrm{m} = 1\)</span>), inbreeding is selectively neutral. That is, inbreeding and outcrossing are no different, creating a one for one swap.</p>
 </div>
 </div>
 </section>
