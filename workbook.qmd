@@ -15,7 +15,7 @@ library(patchwork)
 
 ## The framework
 
-We can model whether inbreeding can invade an outbreeding population by counting the number of alleles that would be propagated by inbreeding individuals, compared to the number of alleles propagated if the individual were to instead outbreed. Let the average number of alleles propagated by an outbreeding female across her lifetime be $N_\mathrm{f}$, with the fraction $1/N_\mathrm{f}$ transmitted per effective mating. For an inbreeding female, the allele counting is more complex. Let the number of alleles transmitted to offspring produced as a result of a single inbreeding event be $(1 - \delta)$, where $\delta$ represents inbreeding depression. Investment in this mating and subsequent reproduction (e.g. through parental care) may affect future reproductive output; following Waser et al. (1986), let this cost be $\Delta N_\mathrm{f}$, such that future allele propagation is $N_\mathrm{f} - \Delta N_\mathrm{f}$. Finally, the number of allele copies indirectly propagated by the related male mating partner is $r(1 - \delta - \Delta N_\mathrm{m})$, where $r$ is the genealogical relatedness coefficient and $\Delta N_\mathrm{m}$ is the cost of male reproductive investment to his future allele propagation. $\Delta N_\mathrm{f}$ and $\Delta N_\mathrm{m}$ will generally range between zero and one, where zero indicates no cost to future mating success, while one represents complete replacement of an outcrossing event. Taken together, inbreeding is favoured for females when
+We can model whether inbreeding can invade an outbreeding population by counting the number of alleles that would be propagated by inbreeding individuals, compared to the number of alleles propagated if the individual were to instead outbreed. Let the average number of alleles propagated by an outbreeding female across her lifetime be $N_\mathrm{f}$, with the fraction $1/N_\mathrm{f}$ transmitted per effective mating. For an inbreeding female, the allele counting is more complex. Let the number of alleles transmitted to offspring produced as a result of a single inbreeding event be $(1 - \delta)$, where $\delta$ represents inbreeding depression. Investment in this mating and subsequent reproduction (e.g. through parental care) may affect future reproductive output; following Waser et al. (1986), let this cost be $\Delta N_\mathrm{f}$, such that future allele propagation is $N_\mathrm{f} - \Delta N_\mathrm{f}$. Finally, the number of allele copies indirectly propagated by the related male mating partner is $r(1 - \delta - \Delta N_\mathrm{m})$, where $r$ is the relatedness coefficient and $\Delta N_\mathrm{m}$ is the cost of male reproductive investment to his future allele propagation. $\Delta N_\mathrm{f}$ and $\Delta N_\mathrm{m}$ will generally range between zero and one, where zero indicates no cost to future mating success, while one represents complete replacement of an outcrossing event. Taken together, inbreeding is favoured for females when
 
 $$(1 - \delta) + (N_\mathrm{f} - \Delta N_\mathrm{f}) + r(1 - \delta - \Delta N_\mathrm{m}) > N_\mathrm{f} \qquad$$ {#eq-f_allele_counting}
 
@@ -55,7 +55,7 @@ expand_grid(D = seq(from = 0, to = 1, by = 0.05),
                        limits = c(0, 1)) +
   labs(y = "Reproductive output from current mating",
        x = "Inbreeding depression",
-       colour = "Net investment\nin care") +
+       colour = "Net investment\nin care (c)") +
   facet_wrap(~ factor(a, levels = c("alpha*' = 0'", "alpha*' = 0.25'",
                                         "alpha*' = 0.5'", "alpha*' = 0.75'",
                                         "alpha*' = 1'")), labeller = label_parsed) +
@@ -63,6 +63,8 @@ expand_grid(D = seq(from = 0, to = 1, by = 0.05),
         legend.position = c(1, 0),
         legend.justification = c(1, 0))
 ```
+
+**Figure 1**. the effect of inbreeding depression on reproductive output when there is parental care.
 
 ::: callout-note
 ## Note
@@ -147,6 +149,8 @@ delta_m_plot <-
 delta_f_plot + delta_m_plot + plot_layout(guides = "collect", axis_titles = "collect")
 ```
 
+**Figure 2**. Inbreeding tolerance thresholds when parental care is female-limited. Different coloured lines show thresholds for different levels of care effectiveness. The left panel shows the conditions required for selection to favour inbreeding in females, while the right shows these conditions for inbreeding in males.
+
 The plot shows that as care more effectively buffers inbreeding depression, the conditions for selection to favour inbreeding become more permissive. As shown previously, relatedness between mating partners has opposite effects depending on the sex expressing the inbreeding allele. To show why, @eq-f_allele_counting_pc and @eq-m_allele_counting_pc can be rearranged in the form of Hamilton's rule $rb > c$. Let $\alpha = 0$ (no effect of care - shown by the yellow line in the Figure), and as before, $\Delta N_\mathrm{f} = 1$ and $\Delta N_\mathrm{m} = 0$. For alleles expressed in females we find that selection favours inbreeding when
 
 $$\underbrace{r(1 - \delta)}_\textrm{male benefit} > \underbrace{\delta}_\textrm{female cost}$$
@@ -159,7 +163,7 @@ Thus, relatedness expands the space where selection favours inbreeding for femal
 ::: callout-tip
 ## Note
 
-When $\alpha = 1$, selection will favour males that inbreed in all cases where inbreeding depression \< 1. Hence, the corresponding dark purple line never appears on the figure.
+When $\alpha = 1$, selection will favour males that inbreed in all cases where inbreeding depression \< 1. Hence, the corresponding dark purple line never appears in Figure 2.
 :::
 
 Now, what happens when males care? Insepction of @eq-f_D_tol_pc and @eq-m_D_tol_pc reveals two, opposing effects. Increasing $\Delta N_\mathrm{m}$ decreases the size of the *numerator*, or put biologically, reduces a male's future reproductive success. However it also leads to an increase in $c$, mitigating the effect of inbreeding depression on offspring production/survival, thus decreasing the size of the *denominator*. Whether inbreeding is favoured when males invest more in care depends largely on the $\alpha$ parameter.
@@ -239,11 +243,13 @@ The rightmost panels show an unusual result. When care is completely effective a
 
 ## What does the model predict?
 
-1. Male care tends to restrict the invasion of alleles that code for inbreeding, relative to no male care conditions. See the fraction of lines that fall below the dashed, black control line in Figure 3. 
+1. Previous models for preferential sibling mating underestimate the magnitude of inbreeding depression that can be tolerated when female-limited care provides some compensation.  
 
-2. Male care reduces the invasion prospects of inbreeding alleles, irrespective of the sex they are expressed in.
+2. Male care tends to restrict the invasion of alleles that code for inbreeding, relative to no male care conditions. See the fraction of lines that fall below the dashed, black control line in Figure 3. 
 
-3. However, when care has a large mitigating effect on inbreeding depression (large $\alpha$), the conditions for inbreeding alleles to invade become more permissive, even when males invest quite a lot in care. For example, when care reduces inbreeding depression by 75%, and males lose half a future outbred mating, the invasion prospects of an inbreeding strategy are equivalent to the no male care condition (where substantial inbreeding depression can be tolerated).   
+3. Male care reduces the invasion prospects of inbreeding alleles, irrespective of the sex they are expressed in.
+
+4. However, when care has a large mitigating effect on inbreeding depression (large $\alpha$), the conditions for inbreeding alleles to invade become more permissive, even when males invest quite a lot in care. For example, when care reduces inbreeding depression by 75%, and males lose half a future outbred mating, the invasion prospects of an inbreeding strategy are equivalent to the no male care condition (where substantial inbreeding depression can be tolerated).   
 
 ## How we can test this?
 
