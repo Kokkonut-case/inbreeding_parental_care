@@ -249,9 +249,9 @@ $$
 \frac{(r - r\Delta N_\mathrm{m})}{1 + r - \alpha c - r\alpha c} >
 \frac{r}{1 + r}
 $$
-which, given that $c = (\Delta N_\mathrm{m} + \Delta N_\mathrm{m})/2$ reduces to 
+which, given that $c = (\Delta N_\mathrm{m} + \Delta N_\mathrm{m})/2$, reduces to 
 
-$$\alpha > \frac{2\Delta N_\mathrm{m}}{1 + \Delta N_\mathrm{m}}$$
+$$\alpha > \frac{2\Delta N_\mathrm{m}}{1 + \Delta N_\mathrm{m}}$${#eq-a_threshold}
 and turns out to be identical in the male case.
 
 ```{r}
